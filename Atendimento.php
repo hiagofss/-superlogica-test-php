@@ -1,6 +1,7 @@
 <?php
 require_once 'header.html';
-$curl = curl_init('http://127.0.0.1:3333/atendimento');
+
+$curl = curl_init('http://18.228.39.100:3333/atendimento');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $atendimentos = json_decode(curl_exec($curl));
 ?>

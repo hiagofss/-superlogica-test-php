@@ -23,7 +23,7 @@ function postAtendimento()
     } else {
         $json = json_encode($data);
 
-        $curl = curl_init("http://127.0.0.1:3333/atendimento");
+        $curl = curl_init("http://18.228.39.100:3333/atendimento");
 
         curl_setopt($curl, CURLOPT_POST, 1);
 
@@ -57,7 +57,7 @@ function updateAtendimento($id)
     } else {
         $json = json_encode($data);
 
-        $url = 'http://127.0.0.1:3333/atendimento/' . $id . '';
+        $url = 'http://18.228.39.100:3333/atendimento/' . $id . '';
 
         $curl = curl_init($url);
 

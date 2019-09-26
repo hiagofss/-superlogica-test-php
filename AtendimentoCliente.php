@@ -4,7 +4,7 @@
 
 $id = $_GET['id'];
 
-$url = 'http://127.0.0.1:3333/atendimento/' . $id . '';
+$url = 'http://18.228.39.100:3333/atendimento/' . $id . '';
 
 $curl = curl_init($url);
 
