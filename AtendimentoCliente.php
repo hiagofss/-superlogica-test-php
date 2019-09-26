@@ -12,14 +12,13 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $atendimento = json_decode(curl_exec($curl));
 
 ?>
-<header>
-
+<main>
     <div class="container mt-3">
-
         <h4 class="cover-heading">ATENDIMENTO #<?= $atendimento->id ?></h4>
         <div class="mt-3">
             <form action="controller/ControllerAtendimento.php?id=<?= $atendimento->id ?>" method="POST">
                 <div class="form-group">
+                    <label for="status">Staus do atendimento:</label>
                     <select name="status" class="btn btn-secondary dropdown-toggle form-control">
                         <option value="Pendente">Pendente</option>
                         <option value="Em andamento">Em andamento</option>
@@ -33,13 +32,13 @@ $atendimento = json_decode(curl_exec($curl));
                 </div>
 
                 <div class="form-group">
-                    <label for="data">E-Mail</label>
+                    <label for="email">E-Mail</label>
                     <input type="email" class="form-control" value="<?= $atendimento->email ?>" name="email" id="email"
                            required>
                 </div>
 
                 <div class="form-group">
-                    <label for="metragem">Mensagem</label>
+                    <label for="mensagem">Mensagem</label>
                     <textarea type="text" class="form-control" name="mensagem" id="mensagem"
                               required><?= $atendimento->mensagem ?></textarea>
                 </div>
@@ -50,7 +49,6 @@ $atendimento = json_decode(curl_exec($curl));
                 </div>
             </form>
         </div>
-
     </div>
-</header>
+</main>
 <?php require_once "footer.html" ?>
